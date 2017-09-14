@@ -1,11 +1,11 @@
 # users new action => GET /users/new
-get '/users/new' do
+get '/user/new' do
   @user = User.new
-  erb :'users/new'
+  erb :'user/new'
 end
 
 # users create action => POST /users
-post '/users' do
+post '/user' do
   puts params
   @user = User.new(params[:user])
   if @user.save #success
@@ -14,23 +14,23 @@ post '/users' do
   else #failure
     status 422 # Telling the computer/browser something was wrong
     @errors = @user.errors.full_messages # Telling the human what went wrong
-    erb :'users/new' # Re-render with errors, let them try again
+    erb :'user/new' # Re-render with errors, let them try again
   end
 end
 
 # Private users show action
 get '/profile' do
   redirect '/login' unless logged_in?
-  puts session.inspect
+  #puts session.inspect
   @user = current_user
   @user.inspect
-  erb :'users/profile'
+  erb :'user/profile'
 end
 
 # Sessions new action => GET /sessions/new
 get '/login' do
   @user = User.new
-  erb :'sessions/new'
+  erb :'user/login'
 end
 
 # Sessions create action => POST /sessions
@@ -43,7 +43,7 @@ post '/login' do
   else
     status 403
     @errors = ["Login failed"]
-    erb :'sessions/new'
+    erb :'user/login'
   end
 end
 

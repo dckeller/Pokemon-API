@@ -1,0 +1,11 @@
+<% if @errors && @errors.any? %>
+  <% @errors.each do |error| %>
+    <span><%= error %></span>
+  <% end %>
+<% end %>
+
+<form action="/login" method="POST">
+  <input type="text" name="email" placeholder="email" />
+  <input type="text" name="password" placeholder="Password" />
+  <input type="submit" value="Login" />
+</form>
