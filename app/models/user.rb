@@ -1,3 +1,5 @@
+require 'bcrypt'
+
 class User < ApplicationRecord
   has_many :subscriptions
   has_many :reviews
@@ -5,12 +7,12 @@ class User < ApplicationRecord
   validates :name, :email, :password, { :presence => true }
 
   def password=(new_password)
-    @password = Password.create(new_password)
+    @password = BCrypt::Password.create(new_password)
     self.hashed_password = @password
   end
 
   def password
-    @password ||= Password.new(hashed_password)
+    @password ||= BCrypt::Password.new(hashed_password)
   end
 
   def self.authenticate(email, password)

@@ -18,6 +18,7 @@ gem 'bcrypt-ruby'
 gem 'shotgun'
 
 gem 'bcrypt'
+gem 'nokogiri'
 
 group :development, :test do
   gem 'faker', '~> 1.7.3'
