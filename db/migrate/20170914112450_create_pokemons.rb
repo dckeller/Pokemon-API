@@ -5,7 +5,7 @@ class CreatePokemons < ActiveRecord::Migration
       t.string  :name
       t.integer :height
       t.integer :weight
-      t.string  :type
+      t.string  :species
       t.integer :hp
       t.integer :attack
       t.integer :defense
