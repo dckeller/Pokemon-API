@@ -1,11 +1,13 @@
 # Pokemon index action => GET /channels
 get '/pokemon/pokemon' do # Controller
-  @pokemon = Pokemon.all # Model
-  erb :'pokemon/pokemon' # View
+  @pokemons = Pokemon.all # Model
+  erb :"/pokemon/pokemon" # View
 end
 
-# # Pokemon show action => GET /channels/:id
-# get '/pokemon/:id' do
-#   @pokemon = Pokemon.find(params[:id])
-#   erb :'pokemon/show'
-# end
+##Pokemon show action => GET /channels/:id
+get '/pokemon/show' do
+  puts "---" * 20
+  puts params
+  @pokemon = Pokemon.find_by(params[:name])
+  erb :"pokemon/show"
+end
