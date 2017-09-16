@@ -6,8 +6,11 @@ end
 
 ##Pokemon show action => GET /channels/:id
 get '/pokemon/show' do
-  puts "---" * 20
-  puts params
-  @pokemon = Pokemon.find_by(params[:name])
-  erb :"pokemon/show"
+  @pokemon = Pokemon.find_by(name: params[:name])
+
+  if request.xhr?
+    erb :"pokemon/_show", layout: false
+  else
+    erb :"pokemon/show"
+  end
 end

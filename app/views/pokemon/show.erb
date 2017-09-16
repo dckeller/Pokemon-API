@@ -1,9 +1,1 @@
-<h1>You Chose... <%= @pokemon.name.capitalize %> </h1>
-
-<h3>Stats:</h3>
-<%="#{@pokemon.name.capitalize} is a #{@pokemon.species} type pokemon.  They usually weigh #{@pokemon.weight} lbs. and are #{@pokemon.height}' tall."%><br>
-<br>
-<%= "HP: #{@pokemon.hp}"%><br>
-<%= "Attack: #{@pokemon.attack}" %><br>
-<%= "Defense: #{@pokemon.defense}" %><br>
-<%= "Speed: #{@pokemon.speed}" %>
+<%= erb :"/pokemon/_show", layout: false %>
