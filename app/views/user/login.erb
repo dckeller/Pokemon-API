@@ -1,0 +1,18 @@
+<h1>Login</h1>
+
+<% if @errors && @errors.any? %>
+  <% @errors.each do |error| %>
+    <span><%= error %></span>
+  <% end %>
+<% end %>
+
+<form action="/user/login" method="POST">
+  <label>Email</label>
+    <input type="text" name="email" value>
+  <label>Password</label>
+    <input type="text" name="password" value>
+  <input type="submit" value="Login">
+</form>
+
+<a href="/user/registration">Register</a>
+<a href="/pokemon/pokemon">Pokemon</a>

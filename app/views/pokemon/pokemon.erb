@@ -1,0 +1,44 @@
+<center>
+<h1></h1>
+<img src="/css/Pokemon.jpg">
+<div class="wrapper"></div>
+
+<div class="body">
+  <form id="pokeform" action="/pokemon/show" method="GET">
+  <select id="chooseyou" name="name">
+    <option value='pokemon' selected>Pick A Pokemon</option>
+    <% @pokemons.each do |pokemon| %>
+      <option value="<%= pokemon.name %>" type='text'> <%= pokemon.name.capitalize %> </option>
+    <% end %>
+  </select>
+  <input type="submit" value="...I Choose You!"<br>
+  </form>
+  <div id="x"></div>
+  <br>
+</div>
+
+<div class="facebook">
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
+  <div class="fb-share-button"
+  data-href="http://localhost:9393/pokemon/pokemon"
+  data-layout="button_count"
+  data-size="large"
+  data-mobile-iframe="true">
+  <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A9393%2Fpokemon%2Fpokemon&amp;src=sdkpreparse">Share</a></div><br>
+  <br>
+</div>
+
+<div class="links">
+  <a href="/user/registration">Register</a>
+  <a href="/user/login">Login</a>
+  <a href = "/user/logout">Logout</a>
+</div>
+</center>
