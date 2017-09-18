@@ -13,3 +13,11 @@
   <%= "Defense: #{@pokemon.defense}" %><br>
   <%= "Speed: #{@pokemon.speed}" %><br>
 </div>
+
+<% if session[:user_id] != nil %>
+  <% if @user.pokemons.include?(@pokemon) %>
+    <%= erb(:'pokemon/_unsubscribe', locals: { user: @user, pokemon: @pokemon }) %>
+  <% else %>
+    <%= erb(:'pokemon/_subscribe', locals: { user: @user, pokemon: @pokemon }) %>
+  <% end %>
+<% end %>

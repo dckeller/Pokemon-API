@@ -1,6 +1,6 @@
 # Subscription create action => POST /subscriptions
 post '/subscriptions' do
-  @user = current_user
+  @user = User.find(session[:user_id])
   @pokemon = Pokemon.find(params[:pokemon_id])
 
   @subscription = Subscription.new(user: @user, pokemon: @pokemon)
