@@ -13,11 +13,19 @@ select {
   padding: 5px;
   font-size: 16px;
   line-height: 1;
-  border: 1px;
-  border-color: red;
-  border-radius: 0;
   height: 34px;
 }
 
-form {
+#artwork {
+  width: 49%;
+}
+
+#stats {
+  width: 49%;
+  font-size: 20px;
+}
+
+.body div {
+  display: inline-block;
+  vertical-align: middle;
 }
