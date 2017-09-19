@@ -21,3 +21,7 @@
     <%= erb(:'pokemon/_subscribe', locals: { user: @user, pokemon: @pokemon }) %>
   <% end %>
 <% end %>
+
+<%=erb(:'review/_reviews', locals: { pokemon: @pokemon }) %>
+
+<a href="/review/new?pokemon_id=<%=@pokemon.id%>"><%=" Write Review about #{@pokemon.name.capitalize}"%></a>

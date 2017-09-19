@@ -1,0 +1,7 @@
+<% @reviews.each do |list| %>
+  <p><%= list.body %><%="- Published By: #{list.user.name}"%></p>
+  <form action="/review/<%= list.id %>" method="POST">
+    <input type="hidden" name="_method" value="DELETE" />
+    <input type="submit" value="Remove Review" />
+  </form>
+<% end %>

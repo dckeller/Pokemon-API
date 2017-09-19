@@ -1,3 +1,13 @@
+#login {
+  background-image: url("login-background.jpg");
+  background-size: cover;
+}
+
+#register {
+  background-image: url("pika.jpg");
+  background-size: cover;
+}
+
 div#show-all {
   overflow: scroll;
   border: red solid 20px;
@@ -33,11 +43,12 @@ select {
 
 #stats {
   width: 49%;
+  height: 30%;
   font-size: 20px;
 }
 
 .body div {
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: top;
 }
 

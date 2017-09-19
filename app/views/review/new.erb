@@ -1,0 +1,8 @@
+<h1>Let's Write A New Review:</h1>
+
+<form action="/review/new" method="POST">
+  <label>Review</label>
+    <input type="hidden" name="pokemon_id" value="<%=@pokemon.id%>">
+    <input type="text" name="body">
+<input type="submit" value="Submit">
+</form>
