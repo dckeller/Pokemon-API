@@ -5,7 +5,7 @@ post '/subscriptions' do
 
   @subscription = Subscription.new(user: @user, pokemon: @pokemon)
   if @subscription.save
-    redirect '/profile'
+    redirect 'user/profile'
   else
     status 422
     @pokemon = Pokemon.find(params[:pokemon_id])
@@ -16,11 +16,10 @@ end
 
 # Subscriptions destroy action => DELETE /subscriptions/:id
 delete '/subscriptions/:id' do
-  redirect '/login' unless logged_in?
   subscription = Subscription.find(params[:id])
-  if subscription.user == current_user
+  if subscription[:user_id] == session[:user_id]
     subscription.destroy
-    redirect '/profile'
+    redirect 'user/profile'
   else
     status 403
     redirect '/'

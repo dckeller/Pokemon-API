@@ -1,9 +1,15 @@
 <h1>Welcome back, <%= @user.name %></h1>
 
-<%# @user.pokemons.each do |animals| %>
-    <li><%#= animals.name %></li>
-<%# end %>
+<div id="show-all">
+  <h2>Here are all the Pokemon you've caught so far:</h2>
+  <% @user.pokemons.each do |animals| %>
+      <h3>Name: <%= animals.name.capitalize %></h3>
+      <img src="/css/official-artwork/<%="#{animals.id}"%>.png" width="100" height="100">
 
+      <%= erb(:'pokemon/_unsubscribe', locals: { user: @user, pokemon: @pokemon }) %>
+
+  <% end %>
+</div>
 
 <a href="/pokemon/pokemon">Pokemon</a>
 <a href = '/user/logout'>logout</a>

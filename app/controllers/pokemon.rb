@@ -6,6 +6,7 @@ end
 
 ##Pokemon show action => GET /channels/:id
 get '/pokemon/show' do
+  @user = User.find(session[:user_id])
   @pokemon = Pokemon.find_by(name: params[:name])
 
   if request.xhr?
