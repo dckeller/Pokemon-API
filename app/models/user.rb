@@ -2,6 +2,7 @@ require 'bcrypt'
 
 class User < ApplicationRecord
   has_many :subscriptions
+  has_many :pokemons, through: :subscriptions
   has_many :reviews
 
   validates :name, :email, :password, { :presence => true }

@@ -21,6 +21,9 @@ end
 # Private users show action
 get '/user/profile' do
   @user = User.find(session[:user_id])
+  @pokemon = Pokemon.all
+
+  @subscription = Subscription.find_by(user: @user, pokemon: @pokemon)
   if session[:user_id] != nil ## Change this to redirect '/login' unless logged_in?
     erb :'user/profile'       ## Then add a if logged_in function to our pokemon
   else                        ## views, so we can view all our fav pokemon

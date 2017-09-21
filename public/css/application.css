@@ -1,11 +1,32 @@
-html {
-  position: fixed;
-  z-index: 999;
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
+#login {
+  background-image: url("login-background.jpg");
+  background-size: cover;
+}
+
+#register {
+  background-image: url("pika.jpg");
+  background-size: cover;
+}
+
+div#show-all {
+  overflow: scroll;
   border: red solid 20px;
   border-radius: 15px;
+  height: 92.5%;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  /*position: fixed;*/
+  /*z-index: 999;*/
+  /*width: 100%;*/
+  /*height: 100%;*/
+  /*box-sizing: border-box;*/
+  min-height: 90%;
+  max-height: 90%;
 }
 
 select {
@@ -13,11 +34,21 @@ select {
   padding: 5px;
   font-size: 16px;
   line-height: 1;
-  border: 1px;
-  border-color: red;
-  border-radius: 0;
   height: 34px;
 }
 
-form {
+#artwork {
+  width: 49%;
 }
+
+#stats {
+  width: 49%;
+  height: 30%;
+  font-size: 20px;
+}
+
+.body div {
+  display: inline-block;
+  vertical-align: top;
+}
+
